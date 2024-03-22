@@ -1,20 +1,35 @@
 import 'package:app_06_workout_planer/constants/colors.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
-class AddEquipments extends StatelessWidget {
+class AddEquipments extends StatefulWidget {
   final String equipmentName;
   final String equipmentDescription;
   final String equipmentImageUrl;
   final int noOfMinuites;
   final double noOfCalories;
+  final bool isAdded;
+  final bool isFavorite;
+  final void Function() toggleAddEquipment;
+  final void Function() toggleAddFavoriteEquipment;
   const AddEquipments(
       {super.key,
       required this.equipmentName,
       required this.equipmentDescription,
       required this.equipmentImageUrl,
       required this.noOfMinuites,
-      required this.noOfCalories});
+      required this.noOfCalories,
+      required this.isAdded,
+      required this.isFavorite,
+      required this.toggleAddEquipment,
+      required this.toggleAddFavoriteEquipment});
 
+  @override
+  State<AddEquipments> createState() => _AddEquipmentsState();
+}
+
+class _AddEquipmentsState extends State<AddEquipments> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -44,7 +59,7 @@ class AddEquipments extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      equipmentName,
+                      widget.equipmentName,
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.w700,
@@ -57,7 +72,7 @@ class AddEquipments extends StatelessWidget {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: Image.asset(
-                            equipmentImageUrl,
+                            widget.equipmentImageUrl,
                             fit: BoxFit.cover,
                             width: 100,
                           ),
@@ -70,7 +85,7 @@ class AddEquipments extends StatelessWidget {
                           child: Column(
                             children: [
                               Text(
-                                equipmentDescription,
+                                widget.equipmentDescription,
                                 style: const TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w700,
@@ -81,7 +96,7 @@ class AddEquipments extends StatelessWidget {
                                 height: 20,
                               ),
                               Text(
-                                "Time: $noOfMinuites min and $noOfCalories cal burned",
+                                "Time: ${widget.noOfMinuites} min and ${widget.noOfCalories} cal burned",
                                 style: const TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w700,
@@ -117,12 +132,14 @@ class AddEquipments extends StatelessWidget {
                     ),
                     child: Center(
                       child: IconButton(
-                        icon: const Icon(
-                          Icons.add,
+                        icon: Icon(
+                          widget.isAdded ? Icons.remove : Icons.add,
                           size: 30,
                           color: kGradientBottomColor,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          widget.toggleAddEquipment();
+                        },
                       ),
                     ),
                   ),
@@ -135,11 +152,15 @@ class AddEquipments extends StatelessWidget {
                     ),
                     child: Center(
                       child: IconButton(
-                        icon: const Icon(
-                          Icons.favorite_border,
+                        icon: Icon(
+                          widget.isFavorite
+                              ? Icons.favorite
+                              : Icons.favorite_border,
                           color: Colors.pink,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          widget.toggleAddFavoriteEquipment();
+                        },
                       ),
                     ),
                   ),

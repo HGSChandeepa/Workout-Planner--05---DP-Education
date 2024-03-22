@@ -1,11 +1,15 @@
 import 'package:app_06_workout_planer/constants/colors.dart';
 import 'package:flutter/material.dart';
 
-class AddExerciseCard extends StatelessWidget {
+class AddExerciseCard extends StatefulWidget {
   final String title;
   final String image;
   final String noOfMinutes;
   final bool showMore;
+  final bool isAdded;
+  final bool isFavorite;
+  final void Function() toggleAddExercise;
+  final void Function() toggleAddFavoriteExercise;
 
   const AddExerciseCard({
     super.key,
@@ -13,8 +17,17 @@ class AddExerciseCard extends StatelessWidget {
     required this.image,
     required this.noOfMinutes,
     required this.showMore,
+    required this.toggleAddExercise,
+    required this.toggleAddFavoriteExercise,
+    required this.isAdded,
+    required this.isFavorite,
   });
 
+  @override
+  State<AddExerciseCard> createState() => _AddExerciseCardState();
+}
+
+class _AddExerciseCardState extends State<AddExerciseCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -39,7 +52,7 @@ class AddExerciseCard extends StatelessWidget {
             height: 10,
           ),
           Text(
-            title,
+            widget.title,
             style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
@@ -51,14 +64,14 @@ class AddExerciseCard extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(15),
             child: Image.asset(
-              image,
+              widget.image,
               fit: BoxFit.cover,
               width: 100,
             ),
           ),
-          if (!showMore)
+          if (!widget.showMore)
             Text(
-              "$noOfMinutes minutes",
+              "${widget.noOfMinutes} minutes",
               style: const TextStyle(
                 fontSize: 15,
                 color: Colors.grey,
@@ -67,7 +80,7 @@ class AddExerciseCard extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          if (showMore)
+          if (widget.showMore)
             const Text(
               "see more",
               style: TextStyle(
@@ -92,12 +105,14 @@ class AddExerciseCard extends StatelessWidget {
                   ),
                   child: Center(
                     child: IconButton(
-                      icon: const Icon(
-                        Icons.add,
+                      icon: Icon(
+                        widget.isAdded ? Icons.remove : Icons.add,
                         size: 30,
                         color: kGradientBottomColor,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        widget.toggleAddExercise();
+                      },
                     ),
                   ),
                 ),
@@ -110,11 +125,15 @@ class AddExerciseCard extends StatelessWidget {
                   ),
                   child: Center(
                     child: IconButton(
-                      icon: const Icon(
-                        Icons.favorite_border,
+                      icon: Icon(
+                        widget.isFavorite
+                            ? Icons.favorite_sharp
+                            : Icons.favorite_border,
                         color: Colors.pink,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        widget.toggleAddFavoriteExercise();
+                      },
                     ),
                   ),
                 ),

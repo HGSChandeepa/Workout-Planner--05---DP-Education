@@ -8,12 +8,16 @@ class User {
   final String gender;
   final String address;
   final String description;
+  int totlaExercisesCompleted;
+  int totlaEquipmentHandedOver;
   final List<Exercise> exerciseList;
   final List<Exercise> favExerciseList;
   final List<Equipment> equipmentList;
   final List<Equipment> favEquipmentList;
 
   User({
+    required this.totlaExercisesCompleted,
+    required this.totlaEquipmentHandedOver,
     required this.userId,
     required this.fullName,
     required this.age,
@@ -36,11 +40,45 @@ class User {
     equipmentList.add(equipment);
   }
 
+  //add exercise to fav list
+  void addFavExercise(Exercise exercise) {
+    favExerciseList.add(exercise);
+  }
+
+  //remove exercise from  list
+  void removeExercise(Exercise exercise) {
+    exerciseList.remove(exercise);
+  }
+
+  //remove equipment from  list
+  void removeEquipment(Equipment equipment) {
+    equipmentList.remove(equipment);
+  }
+
+  //add equipment to fav list
+  void addFavEquipment(Equipment equipment) {
+    favEquipmentList.add(equipment);
+  }
+
+  //remove exercise from fav list
+  void removeFavExercise(Exercise exercise) {
+    favExerciseList.remove(exercise);
+  }
+
+  //remove equipment from fav list
+  void removeFavEquipment(Equipment equipment) {
+    favEquipmentList.remove(equipment);
+  }
+
   // Method to mark an exercise as completed
   void markExerciseAsCompleted(int exerciseId) {
     final exercise =
         exerciseList.firstWhere((exercise) => exercise.id == exerciseId);
     exercise.completed = true;
+    //remove exercise from list
+    removeExercise(exercise);
+    //increase total exercise completed
+    totlaExercisesCompleted++;
   }
 
   // Method to mark an equipment as handed over
@@ -48,6 +86,10 @@ class User {
     final equipment =
         equipmentList.firstWhere((equipment) => equipment.id == equipmentId);
     equipment.handOvered = true;
+    //remove equipment from list
+    removeEquipment(equipment);
+    //increase total equipment handed over
+    totlaEquipmentHandedOver++;
   }
 
   // Method to calculate the total number of calories burned by the user

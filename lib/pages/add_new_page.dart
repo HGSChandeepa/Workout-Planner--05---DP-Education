@@ -75,6 +75,28 @@ class _AddNewPageState extends State<AddNewPage> {
                       image: exercise.exerciseImageUrl,
                       noOfMinutes: exercise.noOfMinuites.toString(),
                       showMore: false,
+                      isAdded: userData.exerciseList.contains(exercise),
+                      isFavorite: userData.favExerciseList.contains(exercise),
+                      toggleAddExercise: () {
+                        setState(() {
+                          if (userData.exerciseList.contains(exercise)) {
+                            userData.removeExercise(exercise);
+                          } else {
+                            userData.addExercise(exercise);
+                          }
+                          print(userData.exerciseList.length);
+                        });
+                      },
+                      toggleAddFavoriteExercise: () {
+                        setState(() {
+                          if (userData.favExerciseList.contains(exercise)) {
+                            userData.removeFavExercise(exercise);
+                          } else {
+                            userData.addFavExercise(exercise);
+                          }
+                          print(userData.favExerciseList.length);
+                        });
+                      },
                     );
                   },
                 ),
@@ -106,6 +128,28 @@ class _AddNewPageState extends State<AddNewPage> {
                       equipmentDescription: equipment.equipmentDescription,
                       noOfMinuites: equipment.noOfMinuites,
                       noOfCalories: equipment.noOfCalories,
+                      isAdded: userData.equipmentList.contains(equipment),
+                      isFavorite: userData.favEquipmentList.contains(equipment),
+                      toggleAddEquipment: () {
+                        setState(() {
+                          if (userData.equipmentList.contains(equipment)) {
+                            userData.removeEquipment(equipment);
+                          } else {
+                            userData.addEquipment(equipment);
+                          }
+                          print(userData.equipmentList.length);
+                        });
+                      },
+                      toggleAddFavoriteEquipment: () {
+                        setState(() {
+                          if (userData.favEquipmentList.contains(equipment)) {
+                            userData.removeFavEquipment(equipment);
+                          } else {
+                            userData.addFavEquipment(equipment);
+                          }
+                          print(userData.favEquipmentList.length);
+                        });
+                      },
                     );
                   },
                 ),

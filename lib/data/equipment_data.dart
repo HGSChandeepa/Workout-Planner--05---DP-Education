@@ -9,7 +9,7 @@ class EquipmentData {
           "A pair of dumbbells for strength training exercises.",
       equipmentImageUrl: "assets/images/equipments/calendar.png",
       noOfMinuites: 30,
-      noOfCalories: 200,
+      noOfCalories: 2,
       handOvered: false,
     ),
     Equipment(
@@ -19,7 +19,7 @@ class EquipmentData {
       equipmentImageUrl: "assets/images/equipments/checklist.png",
       noOfMinuites: 20,
       handOvered: false,
-      noOfCalories: 150,
+      noOfCalories: 15,
     ),
     Equipment(
       id: 2,
@@ -28,7 +28,7 @@ class EquipmentData {
       equipmentImageUrl: "assets/images/equipments/dumbbell.png",
       noOfMinuites: 60,
       handOvered: false,
-      noOfCalories: 300,
+      noOfCalories: 30,
     ),
     Equipment(
       id: 3,
@@ -38,7 +38,7 @@ class EquipmentData {
       equipmentImageUrl: "assets/images/equipments/dumbbells.png",
       noOfMinuites: 15,
       handOvered: false,
-      noOfCalories: 120,
+      noOfCalories: 12,
     ),
     Equipment(
       id: 4,
@@ -48,7 +48,7 @@ class EquipmentData {
       equipmentImageUrl: "assets/images/equipments/facial-roller.png",
       noOfMinuites: 45,
       handOvered: false,
-      noOfCalories: 250,
+      noOfCalories: 25,
     ),
     Equipment(
       id: 5,
@@ -58,7 +58,7 @@ class EquipmentData {
       equipmentImageUrl: "assets/images/equipments/stationary-bike.png",
       noOfMinuites: 25,
       handOvered: false,
-      noOfCalories: 150,
+      noOfCalories: 15,
     ),
     Equipment(
       id: 6,
@@ -68,7 +68,7 @@ class EquipmentData {
       equipmentImageUrl: "assets/images/equipments/treadmill.png",
       noOfMinuites: 40,
       handOvered: false,
-      noOfCalories: 200,
+      noOfCalories: 20,
     ),
     Equipment(
       id: 7,
@@ -78,7 +78,7 @@ class EquipmentData {
       equipmentImageUrl: "assets/images/equipments/facial-roller.png",
       noOfMinuites: 35,
       handOvered: false,
-      noOfCalories: 180,
+      noOfCalories: 18,
     ),
     Equipment(
       id: 8,
@@ -88,7 +88,7 @@ class EquipmentData {
       equipmentImageUrl: "assets/images/equipments/dumbbells.png",
       noOfMinuites: 55,
       handOvered: false,
-      noOfCalories: 280,
+      noOfCalories: 28,
     ),
     Equipment(
       id: 9,
@@ -98,7 +98,7 @@ class EquipmentData {
       equipmentImageUrl: "assets/images/equipments/skipping-rope.png",
       noOfMinuites: 50,
       handOvered: false,
-      noOfCalories: 270,
+      noOfCalories: 27,
     ),
   ];
 }

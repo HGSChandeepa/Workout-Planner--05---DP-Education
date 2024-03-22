@@ -6,11 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key});
+  const MyApp({super.key, Key});
 
   @override
   State<MyApp> createState() => _MyAppState();

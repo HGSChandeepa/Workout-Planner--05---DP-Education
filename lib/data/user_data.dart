@@ -9,6 +9,8 @@ User user = User(
   gender: "Male",
   address: "123 Main St, City, Country",
   description: "Fitness enthusiast",
+  totlaExercisesCompleted: 0,
+  totlaEquipmentHandedOver: 0,
   exerciseList: [
     Exercise(
       exerciseName: "Push-ups",
@@ -48,7 +50,7 @@ User user = User(
   favExerciseList: [
     Exercise(
       exerciseName: "Plank",
-      exerciseImageUrl: "assets/images/exercises/plank.png",
+      exerciseImageUrl: "assets/images/equipments/dumbbell.png",
       noOfMinuites: 30,
       id: 2,
       completed: false,
