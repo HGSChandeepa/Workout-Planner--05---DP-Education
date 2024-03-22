@@ -45,4 +45,24 @@ User user = User(
       noOfCalories: 300,
     ),
   ],
+  favExerciseList: [
+    Exercise(
+      exerciseName: "Plank",
+      exerciseImageUrl: "assets/images/exercises/plank.png",
+      noOfMinuites: 30,
+      id: 2,
+      completed: false,
+    ),
+  ],
+  favEquipmentList: [
+    Equipment(
+      id: 3,
+      equipmentName: "Dumbbells",
+      equipmentDescription: "Weights used for strength training.",
+      equipmentImageUrl: "assets/images/equipments/dumbbell.png",
+      noOfMinuites: 30,
+      handOvered: false,
+      noOfCalories: 200,
+    ),
+  ],
 );

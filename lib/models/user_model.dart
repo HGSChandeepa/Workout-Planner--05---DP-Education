@@ -9,7 +9,9 @@ class User {
   final String address;
   final String description;
   final List<Exercise> exerciseList;
+  final List<Exercise> favExerciseList;
   final List<Equipment> equipmentList;
+  final List<Equipment> favEquipmentList;
 
   User({
     required this.userId,
@@ -20,6 +22,8 @@ class User {
     required this.description,
     required this.exerciseList,
     required this.equipmentList,
+    required this.favExerciseList,
+    required this.favEquipmentList,
   });
 
   // Method to add a new exercise to the user's exercise list

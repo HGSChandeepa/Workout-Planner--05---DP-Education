@@ -75,7 +75,7 @@ class EquipmentData {
       equipmentName: "Medicine Ball",
       equipmentDescription:
           "A heavy ball used for strength and coordination exercises.",
-      equipmentImageUrl: "medicine_ball_image_url",
+      equipmentImageUrl: "assets/images/equipments/facial-roller.png",
       noOfMinuites: 35,
       handOvered: false,
       noOfCalories: 180,
