@@ -1,16 +1,11 @@
-# app_06_workout_planer
+![DP Education IT Campus](https://dpeducation.lk/en/assets/images/brands/en/it-campus.png)
 
-A new Flutter project.
+# WORKOUT PLANNER - Application 05 ⚡️
 
-## Getting Started
+## Overview
 
-This project is a starting point for a Flutter application.
+This is the 6th flutter applcation that we are going to build in the Flutter Development Course at DP Education IT Campus. This application is a workout planner application that allows users to add their workouts and track their progress.Here we dive deep into the concept of state and statefull widgets in Flutter.And working with the local data in Flutter.
 
-A few resources to get you started if this is your first Flutter project:
+## What you will create
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Finished App](https://github.com/HGSChandeepa/Awesome-Places-App--04---Dp-Education/blob/main/assets/app4.png)
