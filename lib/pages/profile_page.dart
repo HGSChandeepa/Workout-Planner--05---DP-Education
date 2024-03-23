@@ -22,7 +22,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
     String formattedDate = formatter.format(now);
-    final progressValue = userData.calculateTotalCaloriesBurned() / 1000;
+    final progressValue = userData.calculateTotalCaloriesBurned() / 2;
     // ignore: avoid_print
     print(progressValue);
     return Scaffold(
@@ -80,7 +80,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Totla Minutes Spend: ${userData.calculateTotalMinutesSpent()}",
+                        "Total Minutes Spend: ${userData.calculateTotalMinutesSpent()}",
                         style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.w800,

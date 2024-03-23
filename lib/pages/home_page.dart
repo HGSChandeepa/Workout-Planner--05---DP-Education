@@ -3,6 +3,7 @@ import 'package:app_06_workout_planer/constants/consant_values.dart';
 import 'package:app_06_workout_planer/data/equipment_data.dart';
 import 'package:app_06_workout_planer/data/exercise_data.dart';
 import 'package:app_06_workout_planer/data/user_data.dart';
+import 'package:app_06_workout_planer/pages/equipments_details_page.dart';
 import 'package:app_06_workout_planer/pages/exercise_details_page.dart';
 import 'package:app_06_workout_planer/widgets/exercise_card.dart';
 import 'package:app_06_workout_planer/widgets/progess_card.dart';
@@ -29,7 +30,7 @@ class _HomepageState extends State<Homepage> {
     String formattedDate = formatter.format(now);
     final userData = user;
 
-    final progressValue = userData.calculateTotalCaloriesBurned() / 1000;
+    final progressValue = userData.calculateTotalCaloriesBurned() / 2;
     print(progressValue);
 
     return Scaffold(
@@ -144,13 +145,11 @@ class _HomepageState extends State<Homepage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => ExerciseLayout(
-                              title: "Equipment",
+                            builder: (context) => EquipmentDetailsPage(
+                              title: "Equipments",
                               description:
                                   "Running is a method of terrestrial locomotion allowing humans and other animals to move rapidly on foot. It is simply defined in athletics terms as a gait in which at regular points during the running cycle both feet are off the ground. ",
-                              exercises: exerciseData.exerciseList,
-                              equipments: equipmentData.equipmentList,
-                              showEquipment: true,
+                              equipemtList: equipmentData.equipmentList,
                             ),
                           ),
                         );

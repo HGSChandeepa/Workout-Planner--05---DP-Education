@@ -93,13 +93,13 @@ class User {
   }
 
   // Method to calculate the total number of calories burned by the user
-  int calculateTotalCaloriesBurned() {
-    int totalCaloriesBurned = 0;
+  double calculateTotalCaloriesBurned() {
+    double totalCaloriesBurned = 0;
     for (var exercise in exerciseList) {
-      totalCaloriesBurned += exercise.noOfMinuites * 5;
+      totalCaloriesBurned += exercise.noOfMinuites * 0.005;
     }
     for (var equipment in equipmentList) {
-      totalCaloriesBurned += equipment.noOfMinuites * 5;
+      totalCaloriesBurned += equipment.noOfMinuites * 0.005;
     }
     return totalCaloriesBurned;
   }
